@@ -1,0 +1,193 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style type="text/css">
+    body{
+         padding:0;
+         border:0;
+         margin:0;
+
+    }
+    .box{
+        width:100%;
+        position:absolute;
+        height:100%;
+        background-color:#FFD700;
+    }
+    .boxheader{
+        height:10%;
+        width:100%;
+
+    }
+     .boxbody{
+        height:78%;
+        width:100%;
+        text-algin:center;
+    }
+
+     .boxbodytwo{
+        height:78%;
+        width:100%;
+        text-algin:center;
+    }
+     .boxfoot{
+        height:12%;
+        width:100%;
+        background-color:#FFD700;
+     }
+     .boxbody table{
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+     }
+     .boxbody table,th,td{
+        border: 1px solid blue;
+     }
+      .boxheader span:last-child{
+        font-size:20px;
+        font-weight:bold;
+        margin-left:5%;
+     }
+      .boxheader button{
+        height:85%;
+        width:18%;
+        margin-left:5%;
+        margin-top:1%;
+        font-size:16px;
+     }
+     .boxbody table th,td{
+        width:33%;
+     }
+     .boxbodytwo table tr,td{
+        width:30%;
+     }
+     .boxfoot p{
+        font-size:16px;
+        font-weight:bold;
+        margin-left:2%;
+      }
+      .boxfoot button{
+        height:70%;
+        width:20%;
+        margin-left:20%;
+        margin-top:1%;
+        font-size:18px;
+      }
+      tr{
+        height:30px;
+      }
+</style>
+</head>
+<body>
+<div class="box">
+    <div class="boxheader" style="width:96%;margin-left:auto;margin-right:auto;">
+            <span>
+                <input id="" onclick="window.jsbridge.purchaseadd();" style="width:100px;height:30px;" type="submit" value="新增" tabindex="0" class="btn btn-primary">
+            </span>
+        <span>采购入库单列表</span>
+    </div>
+    <table cellspacing="0" cellpadding="0" style="background-color:#C0C0C0;width:96%;margin-left: auto;margin-right: auto;">
+        <thead style="">
+        <tr>
+            <th width="30%">单号</th>
+            <th width="39%">供应商</th>
+            <th width="31%">仓库</th>
+        </tr>
+        </thead>
+    </table>
+
+    <div class="" style="width:96%;height:70%;background-color:#F8F8FF;margin-left: auto;margin-right: auto;overflow-x: hidden;">
+        <table cellspacing="0" cellpadding="0" width="100%">
+            <tbody id="list" style="">
+            <tr>
+                <th>单号1</th>
+                <th>供应商1</th>
+                <th>仓库1</th>
+            </tr>
+            <tr>
+                <th>单号2</th>
+                <th>供应商2</th>
+                <th>仓库2</th>
+            </tr>
+            <tr>
+                <th>单号3</th>
+                <th>供应商3</th>
+                <th>仓库3</th>
+            </tr>
+            <tr>
+                <th>单号4</th>
+                <th>供应商4</th>
+                <th>仓库4</th>
+            </tr>
+            <tr>
+                <th>单号5</th>
+                <th>供应商5</th>
+                <th>仓库5</th>
+            </tr>
+            <tr>
+                <th>单号6</th>
+                <th>供应商6</th>
+                <th>仓库6</th>
+            </tr>
+            <tr>
+                <th>单号7</th>
+                <th>供应商7</th>
+                <th>仓库7</th>
+            </tr>
+            <tr>
+                <th>单号8</th>
+                <th>供应商8</th>
+                <th>仓库8</th>
+            </tr>
+            <tr>
+                <th>单号9</th>
+                <th>供应商9</th>
+                <th>仓库9</th>
+            </tr>
+            <tr>
+                <th>单号10</th>
+                <th>供应商10</th>
+                <th>仓库10</th>
+            </tr>
+            <tr>
+                <th>单号11</th>
+                <th>供应商11</th>
+                <th>仓库11</th>
+            </tr>
+            <tr>
+                <th>单号12</th>
+                <th>供应商12</th>
+                <th>仓库12</th>
+            </tr>
+            <tr>
+                <th>单号13</th>
+                <th>供应商13</th>
+                <th>仓库13</th>
+            </tr>
+            <tr>
+                <th>单号14</th>
+                <th>供应商14</th>
+                <th>仓库14</th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="boxheader" style="width:85%;height:8%;margin-left:auto;margin-right:auto;">
+        <span>共 32 条记录&nbsp; 每页显示10条</span>
+        <button onclick="window.jsbridge.back()" class="btn btn default" style="height: 100%;width: 30%;margin-left: 5%;margin-top: 1%;font-size: 15px;border-radius: 4px;">返回</button>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="./www/public_form.js"></script>
+<script type="text/javascript" src="./www/jquery.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

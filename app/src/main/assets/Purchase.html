@@ -1,0 +1,197 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="./www/jquery.min.js"></script>
+    <style type="text/css">
+     body{
+         padding:0;
+         border:0;
+         margin:0;
+    }
+    .box{
+        width:100%;
+        position:absolute;
+        height:100%;
+        background-color:#FFD700;
+    }
+    .boxheader{
+        width:100%;
+        height:12%;
+        position:relative;
+    }
+    .boxbodyone{
+        width:100%;
+        height:78%
+    }
+    .boxfoot{
+        width:100%;
+        height:10%
+    }
+    .label_new{
+        padding: 0;
+        display: block;
+        text-align: right;
+        color: #333;
+        float:left;
+        text-align: right;
+        width:25%;
+    }
+    .headerone{
+        height:100%;
+        padding-top:2%;
+    }
+    .headerone span:first-child{
+        height:100%;
+        font-size:18px;
+        font-weight:bold;
+    }
+     .headerone span:last-child{
+        padding-left:8%;
+    }
+    .headerone button{
+        height:70%;
+        width:20%;
+    }
+    .boxbodyone div{
+        height:12%;
+    }
+    .boxbodyone div input{
+        width:55%;
+        height:60%;
+        float:left;
+    }
+     .boxbodyone div button{
+        height:78%;
+        width:16%;
+     }
+     .boxbodyone div select{
+        width:55%;
+        height:78%;
+     }
+     .boxfoot span{
+        padding-left:8%;
+     }
+     .boxfoot button{
+        height:90%;
+        width:22%;
+     }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="boxheader">
+        <div class="headerone">
+            <span>采购入库单</span>
+            <label class="radio-inline">
+                <input type="radio" name="radio" value="0" disabled id="lan">蓝字
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="radio" value="1" disabled id="hong">红字
+            </label>
+            <span>
+                    <button onclick="window.jsbridge.backout();" class="btn btn-default">返回</button>
+                </span>
+        </div>
+    </div>
+    <div class="boxbodyone">
+        <div>
+            <label class="label_new">
+                <span title="条形码">条形码：</span>
+            </label>
+            <input type="text" datafield="dlid" id="tiaoma" name="outputform" disabled>
+        </div>
+        <div>
+            <label class="label_new">
+                <span title="供应商">供应商：</span>
+            </label>
+            <input type="text" datafield="ccusabbname" id="cusname" name="outputform" disabled>
+            <input type="text" datafield="ccuscode"  name="outputform" hidden>
+            <!--<button onclick="khcanzhao();">参照</button>-->
+        </div>
+        <div>
+            <label class="label_new">
+                <span title="入库类别">入库类别：</span>
+            </label>
+            <select id="chuku">
+                <option value="0001" datafield="crdcode">入库1</option>
+                <option value="0002" datafield="crdcode">入库2</option>
+            </select>
+        </div>
+        <div>
+            <label class="label_new">
+                <span title="备注">备注：</span>
+            </label>
+            <input type="text" datafield="cdlcode"  name="outputform" id="cdlcode" disabled>
+            <!--<button onclick="fhcanzhao">参照</button>-->
+        </div>
+        <div class="headertwo">
+            <label class="label_new">
+                <span title="订单号">订单号：</span>
+            </label>
+            <input type="text"  datafield="cdepname" name="outputform" disabled>
+            <input type="text"  datafield="cdepcode" name="outputform" hidden>
+        </div>
+        <div>
+            <label class="label_new">
+                <span title="到货单号">到货单号：</span>
+            </label>
+            <input type="text" datafield="cwhname" id="cwhname" name="outputform" disabled>
+            <input type="text" datafield="cwhcode" id="cwhcode" name="outputform" hidden>
+            <!--<select id="selects">
+                <option value="volvo">请选择</option>
+            </select>-->
+            <button onclick="canzhao();" id="canzhao" class="btn btn-primary btn-sm" >参照</button>
+        </div>
+        <div>
+            <label class="label_new">
+                <span title="部门">部门：</span>
+            </label>
+            <input type="text" datafield="cmemo" name="outputform" disabled>
+            <input type="text" datafield="gformid" name="outputform" hidden>
+        </div>
+        <div>
+            <label class="label_new">
+                <span title="仓库">仓库：</span>
+            </label>
+            <input type="text" datafield="cmemo" name="outputform" disabled>
+            <input type="text" datafield="gformid" name="outputform" hidden>
+        </div>
+    </div>
+    <div class="boxfoot">
+             <span>
+                 <button  class="btn btn-primary" onclick="window.jsbridge.jumppage();" id="isjihuo">扫码</button>
+             </span>
+        <span>
+                 <button class="btn btn-primary" onclick="savedata();" id="isbaocun">保存</button>
+             </span>
+        <span>
+                <button  class="btn btn-default" onclick="resetsave()">重置</button>
+            </span>
+    </div>
+</div>
+<script type="text/javascript" src="./www/public_form.js"></script>
+<script type="text/javascript">
+    $("#isbaocun").attr("disabled",true);
+    // 取消按钮
+    function resetsave(){
+        var inputs = document.getElementsByName("outputform");
+        var str = "0";
+        if($("#cdlcode").val() != ""){
+            var str = "1";
+        }
+        //$("#resetsave").unbind();
+        //alert(1);
+        // 按钮禁用
+        //$("#isjihuo").attr("disabled",true);
+        //$("#isbaocun").attr("disabled",true);
+        //$("input").val("");
+        window.jsbridge.resetsave(str);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/common.css">
+<style type="text/css">
+    body{
+         padding:0;
+         border:0;
+         margin:0;
+    }
+    .box{
+        width:100%;
+        position:absolute;
+        height:100%
+    }
+    .boxheader{
+        height:10%;
+        width:100%;
+        background-color:rgba(208, 225, 125, 1);
+        margin-bottom:5%;
+    }
+     .boxbody{
+        height:78%;
+        width:100%;
+        text-algin:center;
+    }
+
+     .boxbodytwo{
+        height:78%;
+        width:100%;
+        text-algin:center;
+    }
+     .boxfoot{
+        height:12%;
+        width:100%;
+        background-color:#FFD700;
+     }
+     .boxbody table{
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+     }
+     .boxbody table,th,td{
+        border: 1px solid blue;
+     }
+      .boxheader span:last-child{
+        font-size:20px;
+        font-weight:bold;
+        margin-left:5%;
+     }
+      .boxheader button{
+        height:85%;
+        width:18%;
+        margin-left:5%;
+        margin-top:1%;
+        font-size:16px;
+     }
+     <!--.boxbody table th,td{-->
+        <!--width:33%;-->
+     <!--}-->
+     <!--.boxbodytwo table th{-->
+        <!--width:0%;-->
+     <!--}-->
+     .boxfoot p{
+        font-size:16px;
+        font-weight:bold;
+        margin-left:2%;
+      }
+      .boxfoot button{
+        height:70%;
+        width:20%;
+        margin-left:20%;
+        margin-top:1%;
+        font-size:18px;
+      }
+
+</style>
+</head>
+<body>
+    <div class="box">
+        <div class="boxheader">
+            <span>
+                <button onclick="add();" class="btn btn-primary">新增</button>
+                <button onclick="back();" class="btn btn-default">返回</button>
+            </span>
+            <span>产成品入库列表</span>
+        </div>
+        <div>
+            <button onclick="errors();" class="btn btn-danger" id="err">失败单据</button>
+            <button onclick="successsale();" class="btn btn-default active" id="succ">成功单据</button>
+        </div>
+        <div class="boxbody" style="overflow:auto;display:none">
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <!--<th>序号</th>-->
+                    <th>单号</th>
+                    <th>生产部门</th>
+                    <th>仓库</th>
+                    <!--<th>仓库</th>-->
+                </tr>
+                </thead>
+                <tbody id="lists">
+                <td>aasda</td>
+                <td>adsa</td>
+                <td>asdas</td>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="boxbodytwo" style="overflow:auto;">
+            <table cellspacing="0" cellpadding="0">
+                <thead>
+                <tr>
+                    <!--<th>序号</th>-->
+                    <th width="50" height="40" align="center">序号</th>
+                    <th width="30%" height="40" align="center">操作时间</th>
+                    <th width="30%" height="40" align="center">发货单号</th>
+                    <th width="24%" height="40" align="center">操作员</th>
+                    <!--<th>仓库</th>-->
+                </tr>
+                </thead>
+                <tbody id="list">
+
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="boxfoot">
+            <span>共<span id=""></span>10条记录 滚动查看数据</span>
+            <button onclick="back();" class="btn btn-default">返回</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./www/public_form.js"></script>
+    <script type="text/javascript" src="./www/jquery.min.js"></script>
+    <script type="text/javascript">
+        function errors(){
+            $("#succ").removeClass();
+            $("#succ").addClass("btn btn-defalut");
+            $("#err").removeClass("btn btn-defalut");
+            $("#err").addClass("btn btn-danger");
+            $(".boxbodytwo").show();
+            $(".boxbody").hide();
+        }
+
+        function successsale(){
+            $("#err").removeClass();
+            $("#err").addClass("btn btn-default");
+            $("#succ").removeClass("btn btn-defalut");
+            $("#succ").addClass("btn btn-success");
+            $(".boxbodytwo").hide();
+            $(".boxbody").show();
+        }
+    </script>
+</script>
+</body>
+</html>

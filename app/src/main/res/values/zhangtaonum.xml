@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="zhangtaonum">
+        <item>北京1231</item>
+        <item>上海1231</item>
+        <item>广州3234</item>
+        <item>深圳1321</item>
+    </string-array>
+</resources>

@@ -1,0 +1,13 @@
+.box input[type=text] {
+	border: 1px solid #c8c8c8;
+	min-height: 28px;
+	outline: none;
+	border-radius: 4px;
+	height:28px !important;
+	line-height:28px;
+}
+
+.box label.label_new{
+    height:28px;
+    line-height:28px;
+}
